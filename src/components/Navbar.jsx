@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import hazelLogo from "../assets/logo.jpeg";
+import hazelLogo from "../assets/logo.jpg";
 
 const links = [
   { to: "/", label: "Home", end: true },

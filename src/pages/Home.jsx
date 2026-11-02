@@ -1,4 +1,4 @@
-import heroImage from "../assets/img1.jpeg";
+import heroImage from "../assets/img1.jpg";
 
 const services = [
   { icon: "construction", title: "Welding & Fabrication", description: "Structural and piping repairs, offshore platform adjustments, and metal joining and fabrication work." },
@@ -44,7 +44,7 @@ export default function Home() {
             <p className="hero-description">Hazel PR Company Limited is a 100% indigenous owned company with foreign technical support partners focused on providing diverse technical services in Nigeria and beyond.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="/contact">Contact Us</a>
-              <a className="button button-secondary" href="/services">Our Capability Portfolio <span className="material-symbols-outlined">arrow_forward</span></a>
+              <a className="button button-secondary" href="/services">Explore Services <span className="material-symbols-outlined">arrow_forward</span></a>
             </div>
             <div className="hero-stats">
               <div><strong>100%</strong><span>Indigenous Equity</span></div>
@@ -74,7 +74,7 @@ export default function Home() {
             {services.map((service) => <article className="service-card" key={service.title}>
               <div className="service-icon"><span className="material-symbols-outlined">{service.icon}</span></div>
               <div><h3>{service.title}</h3><p>{service.description}</p></div>
-              <span className="service-standard">Service overview</span>
+              <a className="service-standard" href="/services">Explore service <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
             </article>)}
           </div>
         </div>

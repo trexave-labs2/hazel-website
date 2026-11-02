@@ -1,4 +1,4 @@
-import securityImage from "../assets/img4.jpeg";
+import securityImage from "../assets/img4.jpg";
 
 const securityServices = [
   { icon: "home_work", title: "Residential & Commercial Guard Service", description: "Securing premises, residential estates, high-value commercial properties, and corporate headquarters." },

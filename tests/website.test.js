@@ -90,3 +90,17 @@ test("page navigation invokes the scroll reset effect", async () => {
   assert.match(app, /useLocation\(\)/);
   assert.match(app, /useEffect\(\(\) => \{\s*scrollToTop\(\);\s*\}, \[pathname\]\)/);
 });
+
+test("homepage service cards provide a clear route to the services page", async () => {
+  const home = await read("src/pages/Home.jsx");
+  assert.match(home, /Explore Services/);
+  assert.match(home, /className="service-standard" href="\/services"/);
+});
+
+test("responsive navigation wraps instead of requiring horizontal scrolling", async () => {
+  const styles = await read("src/index.css");
+  assert.match(styles, /@media \(max-width: 1100px\)[\s\S]*?\.nav-links[\s\S]*?flex-wrap: wrap/);
+  assert.match(styles, /@media \(max-width: 700px\)[\s\S]*?\.nav-links[\s\S]*?overflow: visible/);
+  assert.match(styles, /:focus-visible/);
+});
+

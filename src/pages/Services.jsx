@@ -1,5 +1,5 @@
 import { useState } from "react";
-import servicesImage from "../assets/img3.jpeg";
+import servicesImage from "../assets/img3.jpg";
 
 const serviceGroups = [
   {

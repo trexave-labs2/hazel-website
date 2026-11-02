@@ -1,4 +1,4 @@
-import aboutImage from "../assets/img2.jpeg";
+import aboutImage from "../assets/img2.jpg";
 
 const industries = [
   { icon: "oil_barrel", title: "Oil & Gas", text: "Upstream and midstream production support, pipeline servicing, and mechanical pipeline integrity." },

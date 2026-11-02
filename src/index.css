@@ -90,7 +90,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .service-icon .material-symbols-outlined { font-size: 24px; }
 .service-card h3, .industry-card h3, .reason-card h3, .client-card h3 { margin: 0; color: var(--navy-container); font-size: 17px; line-height: 1.4; font-weight: 700; }
 .service-card p, .reason-card p { margin: 7px 0 0; color: #576065; font-size: 14px; line-height: 1.65; }
-.service-standard { margin-top: auto; padding-top: 3px; color: var(--navy-container); font-size: 10px; line-height: 1.4; font-weight: 700; letter-spacing: .06em; }
+.service-standard { margin-top: auto; padding-top: 3px; display: inline-flex; align-items: center; gap: 7px; color: var(--navy-container); font-size: 11px; line-height: 1.4; font-weight: 700; letter-spacing: .02em; }
+.service-standard .material-symbols-outlined { font-size: 16px; transition: transform .2s; }
+.service-standard:hover { text-decoration: underline; text-underline-offset: 3px; }
+.service-standard:hover .material-symbols-outlined { transform: translateX(3px); }
 .industry-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .industry-card { min-width: 0; padding: 22px; display: flex; align-items: center; gap: 14px; border-radius: 10px; background: white; box-shadow: 0 2px 8px rgba(0,15,34,.04); transition: box-shadow .2s, transform .2s; }
 .industry-icon { width: 56px; height: 56px; flex-shrink: 0; display: grid; place-items: center; border-radius: 10px; background: #eceef0; color: var(--navy-container); }
@@ -730,3 +733,70 @@ a.contact-card-value:hover { text-decoration: underline; }
   .contact-map iframe { height: 380px; }
   .contact-map-card { top: 12px; left: 12px; right: 12px; max-width: none; padding: 13px; }
 }
+
+/* UI refinement: responsive navigation, readable hero and consistent interaction states */
+:focus-visible {
+  outline: 3px solid #6d9bd2;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .container, .home-container { width: min(100% - 64px, 1440px); }
+  .navbar { min-height: auto; flex-wrap: wrap; row-gap: 0; padding-top: 14px; }
+  .nav-links {
+    order: 3; width: 100%; justify-content: center; flex-wrap: wrap;
+    gap: 10px 24px; padding: 12px 0 14px;
+  }
+  .nav-actions { margin-left: auto; }
+  .nav-links a { padding: 7px 0; }
+  .nav-links a.active { padding-bottom: 5px; }
+  .hero-layout { gap: 36px; }
+  .hero-copy { width: 46%; }
+  .hero-visual { min-height: 440px; height: min(44vw, 500px); }
+}
+
+@media (max-width: 700px) {
+  .container, .home-container { width: calc(100% - 36px); }
+  .navbar { padding-top: 12px; column-gap: 10px; }
+  .nav-links {
+    justify-content: flex-start; gap: 5px 17px; padding: 12px 0 13px;
+    overflow: visible;
+  }
+  .nav-links a {
+    flex: 0 0 auto; min-height: 32px; display: inline-flex;
+    align-items: center; font-size: 12px;
+  }
+  .nav-links a.active { border-bottom-width: 2px; }
+  .nav-contact { min-height: 36px; padding-inline: 12px; }
+  .hero-copy h1 {
+    max-width: 16ch; font-size: clamp(32px, 8.8vw, 43px); line-height: 1.12;
+  }
+  .hero-description { max-width: 62ch; line-height: 1.7; }
+  .hero-actions > .button { flex: 1 1 170px; }
+  .hero-stats { width: fit-content; min-width: 180px; grid-template-columns: 1fr; }
+  .hero-visual { min-height: 340px; height: 92vw; max-height: 430px; }
+  .hero-image-top { flex-wrap: wrap; }
+  .hero-image-top > span { max-width: 100%; font-size: 8px; line-height: 1.35; }
+  .deployment-card { gap: 9px; }
+  .deployment-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .service-card, .industry-card, .reason-card, .client-card, .mission-card { min-width: 0; }
+  .service-card p, .industry-card p, .reason-card p, .mission-card p { overflow-wrap: anywhere; }
+  .bottom-cta-content .button { width: 100%; }
+}
+
+@media (max-width: 380px) {
+  .container, .home-container { width: calc(100% - 28px); }
+  .brand-lockup { gap: 7px; }
+  .brand-logo { width: 36px; height: 36px; }
+  .brand-copy strong { font-size: 12px; }
+  .brand-copy small { font-size: 7px; }
+  .nav-contact { min-height: 34px; padding-inline: 9px; font-size: 11px; }
+  .nav-links { column-gap: 13px; }
+  .hero-copy h1 { font-size: 32px; }
+  .hero-image-top > span:last-child { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compliance-pill > span { animation: none; }
+}
+

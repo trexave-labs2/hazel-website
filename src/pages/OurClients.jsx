@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import cedarLogo from "../assets/logo-cedarharvestermontessorischools.jpeg";
-import amobiLogo from "../assets/logo-amobiservicesltd.jpeg";
+import cedarLogo from "../assets/logo-cedarharvestermontessorischools.jpg";
+import amobiLogo from "../assets/logo-amobiservicesltd.jpg";
 
 const clients = [
   {
